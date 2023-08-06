@@ -4,15 +4,18 @@
     </span>
 
     <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
-        <SideBarLogo/>
-        <SideBarLink link-name="Inicio"/>
-        <SideBarSeparator/>
-        <SideBarLinkDropdown/>
-        <SideBarLink link-name="Proximamente"/>
+        <SideBarLogo />
+        <SideBarLink link-name="Inicio">
+            <HomeIcon class="h-6 w-6" />
+        </SideBarLink>
+        <SideBarSeparator />
+        <SideBarLinkDropdown />
+        <SideBarLink link-name="Proximamente">
+            <BeakerIcon class="h-6 w-6" />
+        </SideBarLink>
     </div>
 </template>
 
-<script>
-
-
+<script setup>
+import { HomeIcon, BeakerIcon } from '@heroicons/vue/24/solid'
 </script>
