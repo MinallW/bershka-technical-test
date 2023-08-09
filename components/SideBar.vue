@@ -104,6 +104,8 @@ const categories = [
 ];
 
 // TO-DO: Implement this function, usando ternarios because why not? <- se pueden usar ifs también, Simple is better but, testing .reduce
+// Esta función puede ser usada en el input search, aunque actualmente está con un objeto más sencillo de rutas.
+
 const getCategoryPath = (categories, categoryName, currentPath = '/') =>
     categories.reduce(
         (path, category) =>
@@ -116,7 +118,7 @@ const getCategoryPath = (categories, categoryName, currentPath = '/') =>
         null
     );
 
-// OUTPUT SAMPLES
+// OUTPUT SAMPLES <- Works on Console!!
 function callCategoryFunction() {
     console.log(getCategoryPath(categories, 'category4')); // should output: '/category1/category3/category4'
     console.log(getCategoryPath(categories, 'category2')); // should output: '/category1/category2'
