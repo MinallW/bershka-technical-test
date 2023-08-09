@@ -1,5 +1,5 @@
 <template>
-    <ProductList title="Novedades" :products="products"/>
+    <ProductList title="Camisas Hombre" :products="products" />
 </template>
 
 <script setup>
@@ -29,15 +29,8 @@ const products = [
         imageAlt: "Front of men's Basic Tee in Negro.",
         price: '$35',
         color: 'Negro',
-    }, {
-        id: 4,
-        name: 'Camisa básica 4',
-        href: '#',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-        imageAlt: "Front of men's Basic Tee in Negro.",
-        price: '$35',
-        color: 'Negro',
-    }, {
+    },
+    {
         id: 5,
         name: 'Camisa básica 5',
         href: '#',

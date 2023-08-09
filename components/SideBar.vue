@@ -1,19 +1,25 @@
 <template>
-    <span class="sidebar fixed top-0 bottom-0 lg:left-0 p-3 w-[100px] overflow-y-auto text-center bg-gray-900" @click="toggleSidebar">
-         <SideBarLogo class="hover:bg-blue-600 rounded-md cursor-pointer" link-name="">
+    <span class="sidebar fixed top-0 bottom-0 lg:left-0 p-3 w-[100px] overflow-y-auto text-center bg-gray-900"
+        @click="toggleSidebar">
+        <SideBarLogo class="hover:bg-blue-600 rounded-md cursor-pointer" link-name="">
             <Bars4Icon class="h-6 w-6" />
         </SideBarLogo>
     </span>
-
-    <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-3 w-[300px] overflow-y-auto text-center bg-gray-900" v-if="isOpen">
+    <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-3 w-80 overflow-y-auto text-center bg-gray-900" v-if="isOpen">
         <!--  -->
-        <SideBarLogo @click="toggleSidebar" class="hover:bg-blue-600 rounded-md cursor-pointer" link-name="BERSHKA">
+        <SideBarLogo @click="toggleSidebar" link-name="BERSHKA">
             <Bars4Icon class="h-6 w-6" />
         </SideBarLogo>
         <!--  -->
-        <SideBarLink link-name="Inicio">
-            <HomeIcon class="h-6 w-6" />
-        </SideBarLink>
+        <Search />
+        <!--  -->
+        <SideBarSeparator />
+        <!--  -->
+        <NuxtLink to="/">
+            <SideBarLink link-name="Inicio">
+                <HomeIcon class="h-6 w-6" />
+            </SideBarLink>
+        </NuxtLink>
         <!--  -->
         <SideBarSeparator />
         <!-- Women -->
@@ -22,10 +28,12 @@
                 <UserPlusIcon class="h-6 w-6" />
             </template>
             <template v-slot:sublinks>
-                <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
-                <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
-                <SideBarDropdownSubLink link-name="Cosplay idk"></SideBarDropdownSubLink>
-
+                <NuxtLink to="/women/shirts">
+                    <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
+                </NuxtLink>
+                <NuxtLink to="/women/pants">
+                    <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
+                </NuxtLink>
             </template>
         </SideBarLinkDropdown>
         <!-- Women -->
@@ -35,8 +43,12 @@
                 <UserMinusIcon class="h-6 w-6" />
             </template>
             <template v-slot:sublinks>
-                <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
-                <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
+                <NuxtLink to="/men/shirts">
+                    <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
+                </NuxtLink>
+                <NuxtLink to="/men/pants">
+                    <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
+                </NuxtLink>
 
             </template>
         </SideBarLinkDropdown>
@@ -62,4 +74,5 @@ const isOpen = ref(false);
 function toggleSidebar() {
     isOpen.value = !isOpen.value;
 }
+
 </script>

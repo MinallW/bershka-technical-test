@@ -1,8 +1,10 @@
 <template>
   <div class="flex">
-    <NuxtLayout />
-    <div class="ml-[100px] flex-1 p-3">
-      <NuxtPage/>
+    <div class="flex-auto">
+      <SideBar />
+    </div>
+    <div class="flex-auto">
+      <NuxtPage />
     </div>
   </div>
 </template>
