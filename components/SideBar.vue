@@ -1,5 +1,5 @@
 <template>
-    <span class="sidebar fixed top-0 lg:left-0 p-3 w-[100px] h-[50px] text-center bg-gray-900 z-40"
+    <span class="sidebar fixed top-0 lg:left-0 p-3 min-w-[200px] w-[100px] h-[50px] text-center bg-gray-900 z-40"
         @click="toggleSidebar">
         <SideBarLogo class="hover:bg-blue-400 rounded-md cursor-pointer" link-name="">
             <Bars4Icon class="h-6 w-6" />
