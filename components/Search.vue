@@ -51,6 +51,47 @@ function goToRoute({ route }) {
     navigateTo(route)
 }
 
+// Teniendo en cuenta que las rutas de pantalones y camisas están separadas por categorías (rutas) de hombre y mujer (men and women)
+// Aquí implementaré la función getCategoryPath, con el mismo objeto dado.
+// const categories = [
+//     {
+//         name: 'category1',
+//         subcategories: [
+//             {
+//                 name: 'category2',
+//                 subcategories: []
+//             },
+//             {
+//                 name: 'category3',
+//                 subcategories: [
+//                     {
+//                         name: 'category4',
+//                         subcategories: []
+//                     }
+//                 ]
+//             }
+//         ]
+//     },
+//     {
+//         name: 'category5',
+//         subcategories: []
+//     }
+// ];
+
+// // TO-DO: Implement this function
+// const getCategoryPath = (categories, categoryName) => {
+//     let path;
+
+
+//     return path;
+// };
+
+// // OUTPUT SAMPLES
+// console.log(getCategoryPath(categories, 'category4')); // should output: '/category1/category3/category4'
+// console.log(getCategoryPath(categories, 'category2')); // should output: '/category1/category2'
+// console.log(getCategoryPath(categories, 'category5')); // should output: '/category5'
+
+
 const routes = [
     {
         id: 1,
