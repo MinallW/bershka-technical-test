@@ -5,7 +5,7 @@
             <Bars4Icon class="h-6 w-6" />
         </SideBarLogo>
     </span>
-    <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-3 w-80 overflow-y-auto text-center bg-gray-900">
+    <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-3 w-80 overflow-y-auto text-center bg-gray-900" v-if="isOpen">
         <!--  -->
         <SideBarLogo @click="toggleSidebar" link-name="BERSHKA">
             <Bars4Icon class="h-6 w-6" />
@@ -26,10 +26,12 @@
                 <UserPlusIcon class="h-6 w-6" />
             </template>
             <template v-slot:sublinks>
-                <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
-                <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
-                <SideBarDropdownSubLink link-name="Cosplay idk"></SideBarDropdownSubLink>
-
+                <NuxtLink to="/women/shirts">
+                    <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
+                </NuxtLink>
+                <NuxtLink to="/women/pants">
+                    <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
+                </NuxtLink>
             </template>
         </SideBarLinkDropdown>
         <!-- Women -->
@@ -39,8 +41,12 @@
                 <UserMinusIcon class="h-6 w-6" />
             </template>
             <template v-slot:sublinks>
-                <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
-                <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
+                <NuxtLink to="/men/shirts">
+                    <SideBarDropdownSubLink link-name="Camisas"></SideBarDropdownSubLink>
+                </NuxtLink>
+                <NuxtLink to="/men/pants">
+                    <SideBarDropdownSubLink link-name="Pantalones"></SideBarDropdownSubLink>
+                </NuxtLink>
 
             </template>
         </SideBarLinkDropdown>
@@ -61,8 +67,10 @@ import {
     Bars4Icon
 } from '@heroicons/vue/24/outline'
 
-function toggleSidebar() {
+const isOpen = ref(false);
 
+function toggleSidebar() {
+    isOpen.value = !isOpen.value;
 }
 
 </script>
