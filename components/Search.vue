@@ -75,7 +75,7 @@ const routes = [
     {
         id: 5,
         name: 'Hombre',
-        route: '/men/shirts'
+        route: '/men/'
     },
     {
         id: 6,
