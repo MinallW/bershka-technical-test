@@ -1,4 +1,0 @@
-<template>
-    <SideBar/>
-    <slot />
-</template>
