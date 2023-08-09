@@ -53,7 +53,7 @@
             </template>
         </SideBarLinkDropdown>
         <!-- Men -->
-        <SideBarLink link-name="Proximamente">
+        <SideBarLink link-name="Función Categorías" @click="callCategoryFunction">
             <BeakerIcon class="h-6 w-6" />
         </SideBarLink>
     </div>
@@ -73,6 +73,54 @@ const isOpen = ref(false);
 
 function toggleSidebar() {
     isOpen.value = !isOpen.value;
+}
+
+
+// Teniendo en cuenta que las rutas de pantalones y camisas están separadas por categorías (rutas) de hombre y mujer (men and women)
+// Aquí implementaré la función getCategoryPath, con el mismo objeto dado.
+const categories = [
+    {
+        name: 'category1',
+        subcategories: [
+            {
+                name: 'category2',
+                subcategories: []
+            },
+            {
+                name: 'category3',
+                subcategories: [
+                    {
+                        name: 'category4',
+                        subcategories: []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: 'category5',
+        subcategories: []
+    }
+];
+
+// TO-DO: Implement this function, usando ternarios because why not? <- se pueden usar ifs también, Simple is better but, testing .reduce
+const getCategoryPath = (categories, categoryName, currentPath = '/') =>
+    categories.reduce(
+        (path, category) =>
+            path ||
+            (category.name === categoryName
+                ? currentPath + category.name
+                : category.subcategories.length > 0
+                    ? getCategoryPath(category.subcategories, categoryName, currentPath + category.name + '/')
+                    : null),
+        null
+    );
+
+// OUTPUT SAMPLES
+function callCategoryFunction() {
+    console.log(getCategoryPath(categories, 'category4')); // should output: '/category1/category3/category4'
+    console.log(getCategoryPath(categories, 'category2')); // should output: '/category1/category2'
+    console.log(getCategoryPath(categories, 'category5')); // should output: '/category5'
 }
 
 </script>
