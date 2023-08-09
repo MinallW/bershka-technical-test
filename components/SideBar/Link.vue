@@ -7,6 +7,9 @@
 
 <script setup>
 const props = defineProps({
-    linkName: String
+    linkName: {
+        type: String,
+        required: true
+    }
 })
 </script>
