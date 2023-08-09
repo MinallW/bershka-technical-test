@@ -5,7 +5,6 @@
     </div>
     <div class="flex-auto">
       <NuxtPage />
-
     </div>
   </div>
 </template>

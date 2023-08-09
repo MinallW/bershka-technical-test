@@ -15,9 +15,11 @@
         <!--  -->
         <SideBarSeparator />
         <!--  -->
-        <SideBarLink link-name="Inicio">
-            <HomeIcon class="h-6 w-6" />
-        </SideBarLink>
+        <NuxtLink to="/">
+            <SideBarLink link-name="Inicio">
+                <HomeIcon class="h-6 w-6" />
+            </SideBarLink>
+        </NuxtLink>
         <!--  -->
         <SideBarSeparator />
         <!-- Women -->
