@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-400 text-white"
         @click="toggleDropdown">
         <slot name="icon"></slot>
         <div class="flex justify-between w-full items-center">
