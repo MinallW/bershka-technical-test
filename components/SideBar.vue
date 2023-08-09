@@ -1,6 +1,6 @@
 <template>
     <span class="sidebar fixed top-0 bottom-0 lg:left-0 p-3 w-[100px] overflow-y-auto text-center bg-gray-900" @click="toggleSidebar">
-         <SideBarLogo class="hover:bg-blue-600 rounded-md cursor-pointer">
+         <SideBarLogo class="hover:bg-blue-600 rounded-md cursor-pointer" link-name="">
             <Bars4Icon class="h-6 w-6" />
         </SideBarLogo>
     </span>
